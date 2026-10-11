@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+  <title id="title">15MW data center financial control lifecycle</title>
+  <desc id="desc">Project setup and GMP baseline are implemented. Cost controls, ETC and EAC, and forecasting are in development.</desc>
+  <defs>
+    <linearGradient id="dc-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#101820"/>
+      <stop offset="1" stop-color="#1E293B"/>
+    </linearGradient>
+    <style>
+      text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .title { fill: #FFFFFF; font-size: 17px; font-weight: 700; }
+      .note { fill: #94A3B8; font-size: 12px; }
+    </style>
+  </defs>
+  <rect width="1200" height="360" rx="26" fill="url(#dc-bg)"/>
+  <circle cx="1120" cy="24" r="135" fill="#F59E0B" opacity=".06"/>
+  <text x="54" y="58" fill="#FFFFFF" font-size="26" font-weight="750">15MW project financial control lifecycle</text>
+  <text x="54" y="86" fill="#CBD5E1" font-size="14">Implemented foundation shown in green · in-development stages shown with dashed borders</text>
+  <rect x="952" y="37" width="194" height="34" rx="17" fill="#422006" stroke="#F59E0B"/>
+  <text x="1049" y="59" text-anchor="middle" fill="#FCD34D" font-size="12" font-weight="750" letter-spacing="1">IN DEVELOPMENT</text>
+
+  <line x1="136" y1="189" x2="1064" y2="189" stroke="#475569" stroke-width="4" stroke-linecap="round"/>
+
+  <g>
+    <rect x="52" y="138" width="180" height="102" rx="18" fill="#12352B" stroke="#34D399" stroke-width="2"/>
+    <text x="76" y="170" fill="#6EE7B7" font-size="21">✓</text>
+    <text x="76" y="198" class="title">Project Setup</text>
+    <text x="76" y="220" class="note">implemented</text>
+  </g>
+  <path d="M236 189 H260" stroke="#64748B" stroke-width="3"/>
+  <path d="M252 181 L262 189 L252 197" fill="none" stroke="#64748B" stroke-width="3"/>
+
+  <g>
+    <rect x="266" y="138" width="180" height="102" rx="18" fill="#12352B" stroke="#34D399" stroke-width="2"/>
+    <text x="290" y="170" fill="#6EE7B7" font-size="21">✓</text>
+    <text x="290" y="198" class="title">GMP Baseline</text>
+    <text x="290" y="220" class="note">formula-driven model</text>
+  </g>
+  <path d="M450 189 H474" stroke="#64748B" stroke-width="3"/>
+  <path d="M466 181 L476 189 L466 197" fill="none" stroke="#64748B" stroke-width="3"/>
+
+  <g>
+    <rect x="480" y="138" width="180" height="102" rx="18" fill="#1E293B" stroke="#F59E0B" stroke-width="2" stroke-dasharray="8 6"/>
+    <text x="504" y="170" fill="#FCD34D" font-size="19">03</text>
+    <text x="504" y="198" class="title">Cost Controls</text>
+    <text x="504" y="220" class="note">in development</text>
+  </g>
+  <path d="M664 189 H688" stroke="#64748B" stroke-width="3"/>
+  <path d="M680 181 L690 189 L680 197" fill="none" stroke="#64748B" stroke-width="3"/>
+
+  <g>
+    <rect x="694" y="138" width="180" height="102" rx="18" fill="#1E293B" stroke="#F59E0B" stroke-width="2" stroke-dasharray="8 6"/>
+    <text x="718" y="170" fill="#FCD34D" font-size="19">04</text>
+    <text x="718" y="198" class="title">ETC / EAC</text>
+    <text x="718" y="220" class="note">in development</text>
+  </g>
+  <path d="M878 189 H902" stroke="#64748B" stroke-width="3"/>
+  <path d="M894 181 L904 189 L894 197" fill="none" stroke="#64748B" stroke-width="3"/>
+
+  <g>
+    <rect x="908" y="138" width="238" height="102" rx="18" fill="#1E293B" stroke="#F59E0B" stroke-width="2" stroke-dasharray="8 6"/>
+    <text x="932" y="170" fill="#FCD34D" font-size="19">05</text>
+    <text x="932" y="198" class="title">Forecast</text>
+    <text x="932" y="220" class="note">in development</text>
+  </g>
+
+  <text x="54" y="302" fill="#94A3B8" font-size="13">Synthetic portfolio case study · no confidential employer, vendor, contract, or financial data</text>
+</svg>
+

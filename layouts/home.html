@@ -1,0 +1,23 @@
+{{ define "main" }}
+<div class="home-shell">
+<section class="hero" aria-labelledby="hero-title">
+ <div class="hero-copy"><p class="eyebrow"><span class="location-dot"></span> Fremont, California · San Francisco Bay Area</p>
+ <h1 id="hero-title">Finance mind.<br>Builder's curiosity.</h1>
+ <p class="hero-intro">Hi, I'm <strong>Sherry Hu.</strong> I connect finance, systems, and applied AI to turn complex workflows into something people can use.</p>
+ <div class="hero-actions"><a class="button primary" href="{{ "projects/" | relURL }}">Explore my work <span>↗</span></a><a class="text-link" href="{{ "about/" | relURL }}">A little about me →</a></div>
+ <p class="hero-footnote">M.S. Computer Science + M.S. Global Finance<br>Building, learning, and writing along the way.</p></div>
+ <div class="hero-board" aria-label="My work connects finance, systems, and AI"><span class="board-caption">MY PERSONAL WORKBENCH / 01</span><div class="orbit-circle circle-one"></div><div class="orbit-circle circle-two"></div><div class="board-axis"></div>
+ <div class="board-tile tile-finance"><span class="tile-symbol">↗</span><small>01 / THE FOUNDATION</small><strong>Finance</strong><p>Rules. Controls. Evidence.</p></div>
+ <div class="board-tile tile-systems"><span class="tile-symbol">⌘</span><small>02 / THE CONNECTION</small><strong>Systems</strong><p>Workflows that make sense.</p></div>
+ <div class="board-tile tile-ai"><span class="tile-symbol">✳</span><small>03 / THE EXPLORATION</small><strong>Applied AI</strong><p>Useful, with human judgment.</p></div><span class="board-bottom">A practice of turning ideas into working systems.</span></div>
+</section>
+<div class="identity-strip"><span>Finance × Systems × AI</span><span>Builder & learner</span><span>Pilates instructor</span><a href="https://github.com/SherryHuProducts" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+<section class="home-section" aria-labelledby="projects-title"><div class="section-head"><div><p class="eyebrow">01 / SELECTED WORK</p><h2 id="projects-title">Things I'm building.</h2></div><a class="text-link" href="{{ "projects/" | relURL }}">All projects →</a></div>
+<div class="featured-grid">{{ range first 2 (where site.RegularPages "Section" "projects").ByWeight }}{{ partial "project-card.html" . }}{{ end }}</div>
+<div class="small-projects">{{ range after 2 (where site.RegularPages "Section" "projects").ByWeight }}<a class="small-project" href="{{ .RelPermalink }}"><span class="small-project-icon">{{ if eq .Params.category "Applied AI" }}✳{{ else if eq .Params.category "Domain software" }}◎{{ else }}▤{{ end }}</span><small>{{ .Params.category }}</small><h3>{{ .Title }}</h3><p>{{ .Description }}</p><span class="small-status">{{ .Params.status }} <span>↗</span></span></a>{{ end }}</div></section>
+<section class="home-section about-slice" aria-labelledby="about-title"><div><p class="eyebrow">02 / THE PERSON BEHIND THE PROJECTS</p><h2 id="about-title">Different disciplines.<br>A shared way of thinking.</h2></div><div><p>I bring a finance and accounting background, computer science training, and experience helping teams put business systems into practice.</p><p>Outside software, I teach Pilates. Both worlds reward careful observation, clear instructions, and the patience to improve one step at a time.</p><a class="text-link" href="{{ "about/" | relURL }}">Experience, education & interests →</a></div></section>
+<section class="home-section" aria-labelledby="notes-title"><div class="section-head"><div><p class="eyebrow">03 / THE LEARNING NOTEBOOK</p><h2 id="notes-title">Notes from the process.</h2></div><a class="text-link" href="{{ "notes/" | relURL }}">Open notebook →</a></div><div class="notes-grid">{{ range first 3 (where site.RegularPages "Section" "notes").ByDate.Reverse }}<a class="note-card" href="{{ .RelPermalink }}"><small>{{ index .Params.tags 0 }} · WORKING DRAFT</small><h3>{{ .Title }}</h3><p>{{ .Summary | plainify | truncate 115 }}</p><span>Read note →</span></a>{{ end }}</div></section>
+<section class="now-slice" aria-labelledby="now-title"><div><p class="eyebrow">04 / ALWAYS A WORK IN PROGRESS</p><h2 id="now-title">What I'm learning now.</h2><p>AI evaluation, domain knowledge modeling, project accounting, and STOTT PILATES exam preparation.</p></div><a class="button secondary" href="{{ "now/" | relURL }}">Visit my now page →</a></section>
+<div class="closing"><h2>Good systems start with good questions.</h2><a class="text-link" href="https://github.com/SherryHuProducts" target="_blank" rel="noopener noreferrer">Follow my work on GitHub ↗</a></div>
+</div>
+{{ end }}

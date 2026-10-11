@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
+  <title id="title">Creator payout and reconciliation lifecycle</title>
+  <desc id="desc">An animated flow moves from reconciliation through approval, payment request, webhook confirmation, and a final paid audit state.</desc>
+  <defs>
+    <linearGradient id="payout-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B1220"/>
+      <stop offset="1" stop-color="#102A32"/>
+    </linearGradient>
+    <linearGradient id="payout-accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2DD4BF"/>
+      <stop offset="1" stop-color="#60A5FA"/>
+    </linearGradient>
+    <style>
+      text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .label { fill: #E5EEF5; font-size: 17px; font-weight: 650; }
+      .meta { fill: #94A3B8; font-size: 13px; }
+      .step { animation: stepPulse 8s infinite; transform-box: fill-box; transform-origin: center; }
+      .s1 { animation-delay: 0s; } .s2 { animation-delay: 1.25s; }
+      .s3 { animation-delay: 2.5s; } .s4 { animation-delay: 3.75s; }
+      .s5 { animation-delay: 5s; } .s6 { animation-delay: 6.25s; }
+      .old-status { animation: oldState 8s infinite; }
+      .new-status { animation: newState 8s infinite; }
+      @keyframes stepPulse {
+        0%, 12%, 100% { opacity: .72; transform: scale(1); }
+        5% { opacity: 1; transform: scale(1.035); }
+      }
+      @keyframes oldState { 0%, 58% { opacity: 1; } 72%, 100% { opacity: .2; } }
+      @keyframes newState { 0%, 58% { opacity: .2; } 72%, 100% { opacity: 1; } }
+      @media (prefers-reduced-motion: reduce) {
+        .step, .old-status, .new-status { animation: none; }
+        .old-status { opacity: .25; } .new-status { opacity: 1; }
+      }
+    </style>
+  </defs>
+
+  <rect width="1200" height="420" rx="26" fill="url(#payout-bg)"/>
+  <circle cx="1090" cy="36" r="110" fill="#14B8A6" opacity=".05"/>
+  <circle cx="115" cy="415" r="150" fill="#3B82F6" opacity=".05"/>
+
+  <text x="54" y="58" fill="#FFFFFF" font-size="26" font-weight="750">From outstanding balance to confirmed payment</text>
+  <text x="54" y="86" class="meta">A controlled financial workflow with idempotency, webhook confirmation, and an audit trail</text>
+
+  <line x1="116" y1="174" x2="1084" y2="174" stroke="#334155" stroke-width="4" stroke-linecap="round"/>
+  <line x1="116" y1="174" x2="1084" y2="174" stroke="url(#payout-accent)" stroke-width="4" stroke-linecap="round" stroke-dasharray="70 898">
+    <animate attributeName="stroke-dashoffset" values="70;-898" dur="8s" repeatCount="indefinite"/>
+  </line>
+
+  <g class="step s1">
+    <circle cx="116" cy="174" r="34" fill="#0F766E" stroke="#5EEAD4" stroke-width="2"/>
+    <text x="116" y="181" text-anchor="middle" fill="#FFFFFF" font-size="22">↻</text>
+    <text x="116" y="229" text-anchor="middle" class="label">Reconcile</text>
+    <text x="116" y="250" text-anchor="middle" class="meta">expected vs. paid</text>
+  </g>
+  <g class="step s2">
+    <circle cx="310" cy="174" r="34" fill="#155E75" stroke="#67E8F9" stroke-width="2"/>
+    <text x="310" y="181" text-anchor="middle" fill="#FFFFFF" font-size="21">✓</text>
+    <text x="310" y="229" text-anchor="middle" class="label">Approve</text>
+    <text x="310" y="250" text-anchor="middle" class="meta">control gate</text>
+  </g>
+  <g class="step s3">
+    <circle cx="504" cy="174" r="34" fill="#1D4ED8" stroke="#93C5FD" stroke-width="2"/>
+    <text x="504" y="181" text-anchor="middle" fill="#FFFFFF" font-size="20">API</text>
+    <text x="504" y="229" text-anchor="middle" class="label">Pay</text>
+    <text x="504" y="250" text-anchor="middle" class="meta">idempotent request</text>
+  </g>
+  <g class="step s4">
+    <circle cx="698" cy="174" r="34" fill="#5B21B6" stroke="#C4B5FD" stroke-width="2"/>
+    <text x="698" y="181" text-anchor="middle" fill="#FFFFFF" font-size="22">↗</text>
+    <text x="698" y="229" text-anchor="middle" class="label">Provider</text>
+    <text x="698" y="250" text-anchor="middle" class="meta">pending outcome</text>
+  </g>
+  <g class="step s5">
+    <circle cx="892" cy="174" r="34" fill="#7E22CE" stroke="#D8B4FE" stroke-width="2"/>
+    <text x="892" y="181" text-anchor="middle" fill="#FFFFFF" font-size="22">⚡</text>
+    <text x="892" y="229" text-anchor="middle" class="label">Webhook</text>
+    <text x="892" y="250" text-anchor="middle" class="meta">confirm status</text>
+  </g>
+  <g class="step s6">
+    <circle cx="1084" cy="174" r="34" fill="#166534" stroke="#86EFAC" stroke-width="2"/>
+    <text x="1084" y="181" text-anchor="middle" fill="#FFFFFF" font-size="22">≡</text>
+    <text x="1084" y="229" text-anchor="middle" class="label">Audit Trail</text>
+    <text x="1084" y="250" text-anchor="middle" class="meta">final state</text>
+  </g>
+
+  <g class="old-status">
+    <rect x="54" y="305" width="500" height="74" rx="16" fill="#2B1B16" stroke="#F59E0B" stroke-opacity=".55"/>
+    <text x="82" y="334" fill="#FCD34D" font-size="13" font-weight="700" letter-spacing="1.2">BEFORE APPROVAL</text>
+    <text x="82" y="361" fill="#FFFFFF" font-size="22" font-weight="750">$92.73 OUTSTANDING</text>
+  </g>
+  <path d="M574 342 H626" stroke="#64748B" stroke-width="3" stroke-linecap="round"/>
+  <path d="M620 334 L630 342 L620 350" fill="none" stroke="#64748B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <g class="new-status">
+    <rect x="646" y="305" width="500" height="74" rx="16" fill="#102A24" stroke="#34D399" stroke-opacity=".7"/>
+    <text x="674" y="334" fill="#6EE7B7" font-size="13" font-weight="700" letter-spacing="1.2">WEBHOOK CONFIRMED</text>
+    <text x="674" y="361" fill="#FFFFFF" font-size="22" font-weight="750">PAID · $0.00 OUTSTANDING</text>
+  </g>
+</svg>
